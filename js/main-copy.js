@@ -123,17 +123,16 @@ function handleCellClick(cell, index) {
 }
 function initCellElementList() {
   const liList = getCellElementList();
-  console.log("liList", liList);
   liList.forEach((cell, index) => {
     cell.dataset.idx = index;
   });
 
-  const cellListElement = getCellElementListTest();
-  if (cellListElement) {
-    cellListElement.addEventListener("click", (event) => {
-      handleCellClick(event.target, index);
-    });
-  }
+  const ulElement = getCellElementListTest();
+  ulElement.addEventListener("click", (event) => {
+    if (event.target.tagName !== "LI") return;
+    const index = Number.parseInt(event.target.dataset.idx);
+    handleCellClick(event.target, index);
+  });
 }
 
 // console.log(getCellElementList());

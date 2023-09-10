@@ -7,14 +7,22 @@ export function getCellElementList() {
   return document.querySelectorAll("#cellList > li");
 }
 
+export function getCellElementListTest() {
+  return document.getElementById("cellList");
+}
+
 export function getCurrentTurnElement() {
   return document.getElementById("currentTurn");
 }
 
 export function getCellElementAtIdx(index) {
-  return document.querySelectorAll(`#cellList > li:nth-child(${index + 1})`);
+  return document.querySelector(`#cellList > li:nth-child(${index + 1})`);
 }
 
 export function getGameStatusElement() {
   return document.getElementById("gameStatus");
+}
+
+export function getReplyButtonElement() {
+  return document.getElementById("replayGame");
 }
